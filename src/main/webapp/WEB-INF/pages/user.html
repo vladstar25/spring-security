@@ -14,17 +14,19 @@
         <th>age</th>
         <th>login</th>
         <th>password</th>
+        <th>role</th>
         <th>action</th>
     </tr>
         <tr th:each="user : ${listUsers}">
-            <td><span th:text="${user.id}"></span></td>
-            <td><span th:text="${user.name}"></span></td>
-            <td><span th:text="${user.age}"></span></td>
-            <td><span th:text="${user.login}"></span></td>
-            <td><span th:text="${user.password}"></span></td>
+            <td><span th:text="${user.getId()}"></span></td>
+            <td><span th:text="${user.getName()}"></span></td>
+            <td><span th:text="${user.getAge()}"></span></td>
+            <td><span th:text="${user.getLogin()}"></span></td>
+            <td><span th:text="${user.getPassword()}"></span></td>
+            <td><span th:text="${user.getRole()}"></span></td>
             <td>
-                <a th:href="@{/edit(id=${user.id})}">EDIT</a>/
-                <a th:href="@{/delete(id=${user.id})}">DELETE</a>
+                <a th:href="@{/edit(id=${user.getId()})}">EDIT</a>/
+                <a th:href="@{/delete(id=${user.getId()})}">DELETE</a>
             </td>
         </tr>
 </table>

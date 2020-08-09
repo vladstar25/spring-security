@@ -20,13 +20,11 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public List<User> allUsers() {
-        return entityManager.createQuery("from " + User.class.getName()).getResultList();     //session.createQuery("from User").list();
+        return entityManager.createQuery("from " + User.class.getName()).getResultList();
     }
 
     public void add(User user) {
-        System.out.println("ымы тут, добавляем user-а!!!");
-        System.out.println("User.id = " + user.getId() + "User.name = " + user.getName() + "User.age = " + user.getAge());
-        entityManager.persist(user);
+         entityManager.persist(user);
     }
 
     public void delete(User user) {

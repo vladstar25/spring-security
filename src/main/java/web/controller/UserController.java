@@ -63,11 +63,20 @@ public class UserController {
     public String addUser(@RequestParam(name = "login") String login,
                           @RequestParam(name = "password") String password,
                           @RequestParam(name = "name") String name,
-                          @RequestParam(name = "age") int age) {
-       User user = new User(name, age, login, passwordEncoder.encode(password));
+                          @RequestParam(name = "age") int age,
+                          @RequestParam(name = "role_admin") String role_admin,
+                          @RequestParam(name = "role_user") String role_user) {
        Set<Role> set = new HashSet<>();
-       set.add(Role.ROLE_ADMIN);
-       user.setRole(set);
+        System.out.println(role_admin + "     and      " + role_user);
+       if (role_admin.equals("ROLE_ADMIN")) {
+           System.out.println("тут");
+           set.add(Role.ROLE_ADMIN);
+       }
+       if (role_user.equals("ROLE_USER")) {
+            set.add(Role.ROLE_USER);
+       }
+
+       User user = new User(name, age, login, passwordEncoder.encode(password), set);
        userService.add(user);
        return "redirect:/panel";
     }
