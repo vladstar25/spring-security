@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <title>Add</title>
+</head>
+<body>
+<h1>Страница добавления пользователя:</h1>
+
+<form action="/add" method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age">
+
+    <label for="login">Login</label>
+    <input type="text" name="login" id="login">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <input type="submit" value="Add new user">
+
+</form>
+<a href="/logout">Exit</a>
+</body>
+
+</html>
