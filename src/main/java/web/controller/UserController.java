@@ -42,10 +42,6 @@ public class UserController {
 
     @RequestMapping(value = "login", method = GET)
     public String loginPage() {
-        Set<Role> set = new HashSet<>();
-        set.add(Role.ROLE_ADMIN);
-        User user = new User("test", 15, "test", passwordEncoder.encode("test"), set);
-        userService.add(user);
         return "login";
     }
 
